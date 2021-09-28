@@ -4,6 +4,7 @@ import com.currency.converter.Exception.CustomException;
 import com.currency.converter.Exception.ErrorCode;
 import com.currency.converter.Model.CurrencyConverterRequest;
 import com.currency.converter.Model.CurrencyConverterResponse;
+import com.currency.converter.Service.CurrencyConverterService;
 import com.currency.converter.ServiceImpl.CurrencyConverterServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,7 @@ public class CurrencyController {
     public static final Logger logger = LoggerFactory.getLogger(CurrencyController.class);
 
     @Autowired
-    private CurrencyConverterServiceImpl service;
+    private CurrencyConverterService service;
 
     @PostMapping("/currency-converter")
     public ResponseEntity<CurrencyConverterResponse> getDataConverter(@Valid @RequestBody CurrencyConverterRequest converter, BindingResult bindingResult) {
